@@ -1,0 +1,9 @@
+# Runtime data
+data/
+work/
+*.log
+
+# Temporary
+*.tmp
+__pycache__/
+*.pyc

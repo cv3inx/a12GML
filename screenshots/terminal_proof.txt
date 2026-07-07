@@ -1,0 +1,12 @@
+╔══════════════════════════════════════════════╗
+║  Device Identity Verification                ║
+╠══════════════════════════════════════════════╣
+║  Brand:    Samsung
+║  Model:    GALAXY A16 5G
+║  Device:   galaxy_a16
+║  Hardware: mt6985
+║  FP:       samsung/galaxy_a16/galaxy_a16:14/UP1A.231005.007/T...
+║  IMEI:     351229203125729
+║  Serial:   NWV6657K066
+║  MAC:      B0:72:BF:28:77:9b
+╚══════════════════════════════════════════════╝

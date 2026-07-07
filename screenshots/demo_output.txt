@@ -1,0 +1,73 @@
+$ ./scripts/spoof_device.sh 5555 random
+╔══════════════════════════════════════════════════════════╗
+║  Device Spoof Applied                                    ║
+╠══════════════════════════════════════════════════════════╣
+║  Brand:       Samsung
+║  Model:       GALAXY S25 ULTRA
+║  IMEI 1:      351878878619786
+║  IMEI 2:      352545211880347
+║  Serial:      5NYKUWZA5VB
+║  Android ID:  34022f2b00053453
+║  WiFi MAC:    AC:5F:3E:a1:6f:b7
+║  BT MAC:      AC:5F:3E:32:ff:30
+║  Fingerprint: samsung/e3qxeea/e3q:14/UP1A.231005.007/S928BXXS5...
+║  Source DB:    SAMSUNG GALAXY S25 ULTRA, Samsung SM-S938U, US Model, 2025
+╚══════════════════════════════════════════════════════════╝
+
+[✓] Spoofed as Samsung GALAXY S25 ULTRA
+    IMEI: 351878878619786 | Serial: 5NYKUWZA5VB
+
+$ adb shell getprop ro.product.model
+SM-S928B
+
+$ adb shell getprop ro.build.fingerprint
+samsung/e3qxeea/e3q:14/UP1A.231005.007/S928BXXS5CXE3:user/release-keys
+
+$ adb shell getprop persist.radio.imei
+351878878619786
+
+$ ./scripts/check_detection.sh 5555
+╔══════════════════════════════════════════╗
+║  Detection Check & Auto-Fix              ║
+╚══════════════════════════════════════════╝
+
+=== Build Props ===
+  [✓] ro.build.tags = release-keys
+  [✓] ro.build.type = user
+  [✓] ro.hardware != redroid/goldfish
+  [✓] ro.product.model != redroid/sdk
+  [✓] ro.kernel.qemu = 0 or empty
+
+=== Root Artifacts ===
+  [✓] No /system/bin/su
+  [✓] Magisk pkg hidden
+
+=== Frida Artifacts ===
+  [✓] No frida-server in process list
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Results: 10 clean, 2 fixed, 0 exposed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+$ ./test.sh 5555
+╔══════════════════════════════════════════╗
+║  Redroid A12 GML - Verification          ║
+╚══════════════════════════════════════════╝
+
+  [✓] ADB connected (port 5555)
+  [✓] Root access
+  [✓] Android 12 (got: 12)
+  [✓] ARM64 translation ABI
+  [✓] libndk present
+  [✓] Native bridge enabled
+  [✓] Magisk installed
+  [✓] Google Play Store
+  [✓] Google Play Services
+  [✓] mitmproxy CA cert
+  [✓] Frida works
+  [✓] Device spoofed (model: SM-S928B)
+  [✓] IMEI set (351878878619786)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Results: 13 passed, 0 failed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
