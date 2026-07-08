@@ -6,7 +6,7 @@ import sys
 import time
 import os
 
-IMAGE = "redroid/redroid:12.0.0-gml"
+IMAGE = "redroid/redroid:12.0.0_gapps_ndk_magisk_frida_spoof"
 FALLBACK_IMAGE = "redroid/redroid:12.0.0_ndk_magisk"
 CONTAINER = "redroid-gml"
 
