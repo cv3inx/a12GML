@@ -1,9 +1,7 @@
-# Runtime data
-data/
 work/
+data/
 *.log
-
-# Temporary
-*.tmp
 __pycache__/
 *.pyc
+*.pyo
+Dockerfile
