@@ -68,7 +68,7 @@ def main():
     
     adb(port, f"settings put secure android_id '{identity['android_id']}'")
     adb(port, f"settings put global device_name '{identity['model']}'")
-    adb(port, f"wm density {identity['density']}")
+    # density change disabled - causes scrcpy freeze
     
     print(f"\n[✓] Spoofed as {identity['brand']} {identity['model']}")
     print(f"    IMEI: {identity['imei1']} | Serial: {identity['serial']}")
